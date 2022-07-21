@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  tweetapp:
+    image: shiva5667/component-3_tweetapp:latest
+    container_name: tweetapp
+    ports:
+      - "8080:8080"
+    networks:
+      - elk
+     
+      
+  tweetappreact:
+    image: shiva5667/component-3_tweetappreact:latest
+    container_name: tweetappreact
+    ports:
+      - '80:3000'
+    volumes:
+      - ./tweetappreact:/tweetappreact
+      - ./tweetappreact/node_modules:/tweetappreact/node_modules
+    networks:
+      - elk
+      
+ networks:
+  elk:
+   driver: bridge
