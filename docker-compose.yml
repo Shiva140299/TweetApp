@@ -21,7 +21,8 @@ services:
       - ./tweetappreact/node_modules:/tweetappreact/node_modules
     networks:
       - elk
-      
- networks:
+
+
+networks:
   elk:
    driver: bridge
